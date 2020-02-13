@@ -6,12 +6,18 @@ declare global {
 
 export interface AvailableOptions {
   has: boolean;
-  faceId: boolean;
-  touchId: boolean;
+  face: boolean;
+  touch: boolean;
+}
+
+export interface VerifyOptions {
+  message: string;
+  fallbackTitle?: string;
+  cancelTitle?:string;
 }
 
 export interface IFingerPrintAuthPlugin {
   available(): Promise<AvailableOptions>;
-  verify(): Promise<any>;
-  verifyWithFallback(): Promise<any>;
+  verify(options: VerifyOptions): Promise<any>;
+  verifyWithFallback(options: VerifyOptions): Promise<any>;
 }
