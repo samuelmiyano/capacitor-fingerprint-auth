@@ -131,7 +131,7 @@ public class FingerPrintAuthPlugin: CAPPlugin {
             ctx.localizedCancelTitle = cancelTitle
         }
 
-        ctx.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: message) { (success, error) in
+        ctx.evaluatePolicy(LAPolicy.deviceOwnerAuthentication, localizedReason: message) { (success, error) in
             DispatchQueue.main.async {
                 if(success){
                     call.resolve()
