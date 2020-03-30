@@ -67,15 +67,19 @@ public class FingerPrintAuthPlugin extends Plugin {
                 obj.put("has", false);
                 call.resolve(obj);
             } else {
-                if (!manager.isHardwareDetected()) {
-                    call.reject("Device doesn't support fingerprint authentication");
-                } else if (!manager.hasEnrolledFingerprints()) {
-                    call.reject("User hasn't enrolled any fingerprints to authenticate with");
+                if (manager == null ){
+                        call.reject("Device doesn't support fingerprint authentication");
                 } else {
-                    obj.put("has", false);
-                    obj.put("touch", true);
-                    call.resolve(obj);
-                }
+                        if (!manager.isHardwareDetected() ) {
+                                call.reject("Device doesn't support fingerprint authentication");
+                        } else if (!manager.hasEnrolledFingerprints()) {
+                                call.reject("User hasn't enrolled any fingerprints to authenticate with");
+                        } else {
+                                obj.put("has", false);
+                                obj.put("touch", true);
+                                call.resolve(obj);
+                        }
+                }          
             }
         } else {
             call.reject("Api version not supported");
