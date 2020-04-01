@@ -48,7 +48,7 @@ repositories {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'ionic-team:capacitor-android:1+'
+    implementation project(':capacitor-android')
     implementation 'com.github.JesusM:FingerprintManager:v2.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
