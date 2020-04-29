@@ -9,8 +9,6 @@ import android.os.Build;
 import android.security.keystore.KeyGenParameterSpec;
 import android.security.keystore.KeyProperties;
 import android.security.keystore.UserNotAuthenticatedException;
-import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 
 import com.getcapacitor.JSObject;
 import com.getcapacitor.NativePlugin;
